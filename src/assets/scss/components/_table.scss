@@ -1,0 +1,16 @@
+.custom-table,
+.custom-scroll {
+	&::-webkit-scrollbar {
+		width: 3px;
+		height: 8px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent; /* color of the tracking area */
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #08c51a; /* color of the scroll thumb */
+		border-radius: 20px; /* roundness of the scroll thumb */
+	}
+}
