@@ -24,7 +24,9 @@ const OrdersContent = () => {
 	const order_status_list = [
 		{ id: 'preparing', name: t('preparing') },
 		{ id: 'on_the_road', name: t('on the road') },
-		{ id: 'delivered', name: t('delivered') }
+		{ id: 'delivered', name: t('delivered') },
+		{ id: 'Cancelled_Quality', name: t('cancelled quality') },
+		{ id: 'Cancelled_Delivery', name: t('cancelled delivery') }
 	]
 
 	const order_types_list = [

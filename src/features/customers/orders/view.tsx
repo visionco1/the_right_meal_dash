@@ -64,6 +64,8 @@ const ViewOrderContent = () => {
 					<ListItem label={t('phone')} value={showResponse?.data?.phone} />
 					<ListItem label={t('total price')} value={showResponse?.data?.total_price} />
 					<ListItem label={t('address')} value={showResponse?.data?.address?.address} />
+					{showResponse?.data?.status && <ListItem label={t('status')} value={((showResponse?.data?.status || '') as string)?.replaceAll('_', ' ')} />}
+					{showResponse?.data?.cancel_reason && <ListItem label={t('reason')} value={showResponse?.data?.cancel_reason} />}
 				</div>
 
 				<div className="mt-8">

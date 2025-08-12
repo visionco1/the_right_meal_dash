@@ -1,38 +1,29 @@
 import { useExport } from './hooks'
-import { exportReportApi } from './api'
+import { exportFinanceApi } from './api'
 import ExportModal from './export-modal'
 import { useTranslation } from 'react-i18next'
 
-const ExportAll = ({ date }: { date: string }) => {
+const ExportFinance = ({ date }: { date: string }) => {
     const { t } = useTranslation()
 
     const { handleSubmit, handleChange, loading, data, setOpenModal, open, keys } = useExport({
         date,
-        api: exportReportApi,
-        keys: [
-            'customer',
-            'subscription',
-            'location',
-            'zone',
-            'delivery_time',
-            'captain',
-            'note',
-            'delivery_note'
-        ]
+        api: exportFinanceApi,
+        keys: ['customer', 'plan', 'status', 'version', 'price']
     })
 
     return (
         <ExportModal
+            data={data}
             open={open}
             keys={keys}
-            data={data}
             loading={loading}
-            title={t('Order Report')}
+            title={t('Finance Report')}
+            setOpenModal={setOpenModal}
             handleChange={handleChange}
             handleSubmit={handleSubmit}
-            setOpenModal={setOpenModal}
         />
     )
 }
 
-export default ExportAll
+export default ExportFinance
